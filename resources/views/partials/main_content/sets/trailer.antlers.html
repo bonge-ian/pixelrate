@@ -1,0 +1,14 @@
+<h4>Watch Trailer</h4>
+
+<div class="uk-inline uk-margin-bottom uk-light" uk-lightbox>
+    <a href="{{ trailer_link }}" data-attrs="width: 1280; height: 720;">
+        {{ glide:trailer_cover_image width="1600" height="910"}}
+            <img data-src="{{ url }}" alt="{{ alt }}" uk-img width="{{width}}" height="{{height}}">
+
+        {{/glide:trailer_cover_image}}
+
+        <div class="uk-position-center">
+            <span class="uk-icon" uk-icon="icon: videoplay; ratio: 0.9"></span>
+        </div>
+    </a>
+</div>

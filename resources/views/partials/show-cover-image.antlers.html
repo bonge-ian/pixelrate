@@ -1,0 +1,31 @@
+<div class="uk-margin uk-margin-remove-top" uk-scrollspy-class>
+    <a href="#cover-image-modal" uk-toggle>
+        {{ glide:show_cover_image width="610" height="904"}}
+        <img
+            data-src="{{ url }}"
+            alt="{{ alt }}"
+            uk-img
+            width="{{width}}"
+            height="{{height}}"
+        />
+        {{ /glide:show_cover_image}}
+    </a>
+    <div id="cover-image-modal" class="uk-flex-top uk-modal" uk-modal="">
+        <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+            <button
+                class="uk-modal-close-outside uk-icon uk-close"
+                type="button"
+                uk-close=""
+            ></button>
+            {{ glide:show_cover_image width="675" height="1000"}}
+            <img
+                data-src="{{ url }}"
+                alt="{{ alt }}"
+                uk-img
+                width="{{width}}"
+                height="{{height}}"
+            />
+            {{ /glide:show_cover_image}}
+        </div>
+    </div>
+</div>

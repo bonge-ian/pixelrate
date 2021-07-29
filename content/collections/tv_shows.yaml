@@ -1,0 +1,12 @@
+title: 'TV Shows'
+template: tv_shows/show
+layout: layout
+taxonomies:
+  - seasons
+revisions: false
+route: '/tv-shows/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

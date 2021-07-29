@@ -1,0 +1,160 @@
+title: 'Side Content'
+fields:
+  -
+    handle: side_content
+    field:
+      always_show_set_button: true
+      sets:
+        details:
+          display: Details
+          fields:
+            -
+              handle: directors
+              field:
+                display: Directors
+                type: list
+                icon: list
+                listable: hidden
+            -
+              handle: writers
+              field:
+                display: Writers
+                type: list
+                icon: list
+                listable: hidden
+            -
+              handle: country
+              field:
+                input_type: text
+                antlers: false
+                display: Country
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: release_date
+              field:
+                mode: single
+                time_enabled: false
+                time_required: false
+                earliest_date: '1900-01-01'
+                full_width: false
+                inline: false
+                columns: 1
+                rows: 1
+                display: 'Release Date'
+                type: date
+                icon: date
+                width: 50
+                listable: hidden
+            -
+              handle: runtime
+              field:
+                display: Runtime
+                type: time
+                icon: time
+                width: 50
+                listable: hidden
+            -
+              handle: studio
+              field:
+                input_type: text
+                antlers: false
+                display: Studio
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+        cast:
+          display: Cast
+          fields:
+            -
+              handle: cast
+              field:
+                mode: default
+                collections:
+                  - actors
+                display: Cast
+                type: entries
+                icon: entries
+                listable: hidden
+                validate:
+                  - required
+        links:
+          display: Links
+          fields:
+            -
+              handle: official_website
+              field:
+                display: 'Official Website'
+                type: link
+                icon: link
+                listable: hidden
+            -
+              handle: facebook
+              field:
+                display: Facebook
+                type: link
+                icon: link
+                listable: hidden
+            -
+              handle: twitter
+              field:
+                display: Twitter
+                type: link
+                icon: link
+                listable: hidden
+            -
+              handle: instagram
+              field:
+                display: Instagram
+                type: link
+                icon: link
+                listable: hidden
+            -
+              handle: youtube
+              field:
+                display: Youtube
+                type: link
+                icon: link
+                listable: hidden
+            -
+              handle: discord
+              field:
+                display: Discord
+                type: link
+                icon: link
+                listable: hidden
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+        - h1
+        - underline
+        - strikethrough
+        - code
+        - codeblock
+        - horizontalrule
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      display: 'Side Content'
+      type: bard
+      icon: bard
+      listable: true

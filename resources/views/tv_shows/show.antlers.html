@@ -1,0 +1,91 @@
+{{ partial:hero :title="title" :image_url="hero_image" }}
+
+<section
+    class="uk-section uk-section-default"
+    uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-small; delay: false;"
+>
+    <div class="uk-container">
+        <div class="uk-grid-column-large uk-grid-margin uk-grid" uk-grid>
+            <div class="uk-width-2-3@s">
+                <div
+                    class="uk-margin"
+                    uk-filter="target: .episode-filter; animation: delayed-fade;"
+                >
+                    <ul class="uk-tab uk-margin-medium">
+                        {{ seasons sort="title:desc"}}
+                        <li
+                            class="{{ if first }} uk-active {{/if}}"
+                            uk-filter-control="[data-tag~='{{slug}}']"
+                        >
+                            <a href="#">{{ title }}</a>
+                        </li>
+                        {{ /seasons}}
+                    </ul>
+
+                    <div
+                        class="episode-filter uk-child-width-1-1 uk-grid uk-grid-divider uk-grid-match"
+                        uk-grid
+                    >
+                        {{ collection:episodes :tv_show:is="id"
+                        sort="taxonomy:episodes:title:desc" }}
+                        <div data-tag="{{ seasons:slug }}">
+                            <div class="uk-panel">
+                                <div
+                                    class="uk-child-width-expand uk-grid-row-small uk-grid"
+                                    uk-grid
+                                >
+                                    <div class="uk-width-1-3@m uk-flex-last@m">
+                                        <a href="{{ url }}">
+                                            {{ glide:hero_image width="610"
+                                            height="365"}}
+                                            <img
+                                                data-src="{{ url }}"
+                                                alt="{{ alt }}"
+                                                uk-img
+                                                width="{{ width }}"
+                                                height="{{ height }}"
+                                            />
+                                            {{ /glide:hero_image}}
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <h5
+                                            class="uk-margin-small-top uk-margin-remove-bottom"
+                                        >
+                                            {{ episodes:title }}
+                                        </h5>
+                                        <h3
+                                            class="uk-margin-small-top uk-margin-remove-bottom"
+                                        >
+                                            {{ title }}
+                                        </h3>
+                                        <div
+                                            class="uk-panel uk-margin-small-top"
+                                        >
+                                            {{ main_content where="type:intro"}}
+                                            {{ substrap }} {{ /main_content}}
+                                        </div>
+                                        <div class="uk-margin-top">
+                                            <a
+                                                href="{{ url }}"
+                                                class="uk-button uk-button-text"
+                                                >Read Review
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ /collection:episodes }}
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-3@s">
+                {{ partial:show-cover-image :show_cover_image="cover_image" }}
+                <div class="uk-panel">
+                    {{ partial:side_content.preview :source="side_content"}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

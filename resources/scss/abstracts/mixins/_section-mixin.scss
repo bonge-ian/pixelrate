@@ -1,0 +1,3 @@
+@mixin hook-section-muted {
+    background: scale-color($color: $global-secondary-background, $alpha: -75%);
+}

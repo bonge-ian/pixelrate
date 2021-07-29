@@ -1,0 +1,21 @@
+<section
+    class="uk-section-default uk-text-center"
+    uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;"
+>
+    <div
+        class="uk-background-norepeat uk-background-center-center uk-background-cover uk-section uk-section-xlarge"
+        data-src="{{ image_url }}"
+        uk-img
+    >
+        <div class="uk-child-width-1-1 uk-grid uk-grid-margin" uk-grid>
+            <div class="uk-light">
+                <h1
+                    class="uk-heading-divider uk-display-inline-block uk-text-center uk-text-capitalize"
+                    uk-scrollspy-class
+                >
+                    {{ title }}
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>

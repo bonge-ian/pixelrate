@@ -1,0 +1,46 @@
+name: admin
+super: true
+id: cc2b5d8f-acaa-4ef2-8192-637bc0bdfd02
+password_hash: $2y$10$6PjLXX4HWz817qMhp4wfnuEnExQNOnm16mLKj0Cue9PiLZtyQzqJG
+preferences:
+  taxonomies:
+    seasons:
+      after_save: create_another
+  collections:
+    actors:
+      columns:
+        - title
+        - avatar
+        - slug
+    movies:
+      columns:
+        - title
+        - cover_image
+        - genres
+        - slug
+        - date
+      after_save: continue_editing
+    episodes:
+      columns:
+        - title
+        - slug
+        - tv_show
+        - seasons
+        - episodes
+        - date
+    tv_shows:
+      columns:
+        - title
+        - seasons
+        - slug
+        - date
+    latest_trailers:
+      columns:
+        - title
+        - cover_image
+        - slug
+        - trailer_duration
+        - date
+  assets:
+    assets:
+      mode: table

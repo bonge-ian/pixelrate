@@ -1,0 +1,71 @@
+<h3 uk-scrollspy-class>Details</h3>
+<ul
+    class="uk-list uk-list-large uk-scrollspy-inview uk-animation-slide-left-small"
+    uk-scrollspy-class
+>
+    <li>
+        <div class="uk-child-width-expand@m uk-grid-small uk-grid" uk-grid="">
+            <div class="uk-width-small@m uk-text-break uk-first-column">
+                <h5 class="uk-margin-remove uk-h5">Directors</h5>
+            </div>
+            <div>
+                <div class="uk-panel uk-text-capitalize">
+                    {{ directors | join}}
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="uk-child-width-expand@m uk-grid-small uk-grid" uk-grid="">
+            <div class="uk-width-small@m uk-text-break uk-first-column">
+                <h5 class="k-margin-remove uk-h5">Writers</h5>
+            </div>
+            <div>
+                <div class="uk-panel uk-text-capitalize">
+                    {{ writers | join}}
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="uk-child-width-expand@m uk-grid-small uk-grid" uk-grid="">
+            <div class="uk-width-small@m uk-text-break uk-first-column">
+                <h5 class="uk-margin-remove uk-h5">Runtime</h5>
+            </div>
+            <div>
+                <div class="uk-panel">{{ runtime format="B" }} minutes</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="uk-child-width-expand@m uk-grid-small uk-grid" uk-grid="">
+            <div class="uk-width-small@m uk-text-break uk-first-column">
+                <h5 class="uk-margin-remove uk-h5">Country</h5>
+            </div>
+            <div>
+                <div class="uk-panel">{{ country }}</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="uk-child-width-expand@m uk-grid-small uk-grid" uk-grid="">
+            <div class="uk-width-small@m uk-text-break uk-first-column">
+                <h5 class="uk-margin-remove uk-h5">Release Date</h5>
+            </div>
+            <div>
+                <div class="uk-panel">{{ release_date format="F d, Y" }}</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="uk-child-width-expand@m uk-grid-small uk-grid" uk-grid="">
+            <div class="uk-width-small@m uk-text-break uk-first-column">
+                <h5 class="uk-margin-remove uk-h5">Studio</h5>
+            </div>
+            <div>
+                <div class="uk-panel uk-text-capitalize">{{ studio}}</div>
+            </div>
+        </div>
+    </li>
+</ul>
+<hr>

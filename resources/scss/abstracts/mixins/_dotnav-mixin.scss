@@ -1,0 +1,19 @@
+@mixin hook-dotnav-item {
+    border-radius: 0;
+    width: 16px;
+    height: 4px;
+    transition: color, background-color, border-color,
+        box-shadow 0.3s ease-in-out;
+}
+
+@mixin hook-dotnav-item-hover {
+    background-color: lighten($global-primary-background, 5%);
+}
+
+@mixin hook-dotnav-item-onclick {
+    background-color: lighten($global-primary-background, 10%);
+}
+
+@mixin hook-dotnav-item-active {
+    background-color: $global-primary-background;
+}

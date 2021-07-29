@@ -1,0 +1,40 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          instructions: 'Site Title'
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: logo
+        field:
+          mode: grid
+          container: assets
+          restrict: true
+          allow_uploads: true
+          max_files: 1
+          display: Logo
+          type: assets
+          icon: assets
+          listable: hidden
+          validate:
+            - required
+            - image
+          folder: global
+      -
+        handle: entries_per_page
+        field:
+          display: 'Entries Per Page'
+          type: integer
+          icon: integer
+          instructions: 'The default number of entries/items per page'
+          listable: hidden

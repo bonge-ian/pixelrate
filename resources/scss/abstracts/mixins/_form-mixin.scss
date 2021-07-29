@@ -1,0 +1,12 @@
+@mixin hook-form {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid $global-color;
+    transition: 0.25s ease-in-out;
+    transition-property: color, background-color, border-color, box-shadow;
+}
+
+@mixin hook-form-focus {
+    border-color: $global-primary-background;
+    background-color: transparent;
+}

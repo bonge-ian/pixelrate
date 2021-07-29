@@ -1,0 +1,5 @@
+title: 'Site Config'
+data:
+  title: Pixelrate
+  logo: global/pixelrate-logo.svg
+  entries_per_page: 10

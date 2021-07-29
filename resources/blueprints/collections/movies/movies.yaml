@@ -1,0 +1,87 @@
+title: Movies
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: hero_image
+        field:
+          mode: grid
+          container: assets
+          folder: movies/hero-images
+          restrict: true
+          allow_uploads: true
+          max_files: 1
+          display: 'Hero Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          validate:
+            - required
+            - image
+      -
+        import: main_content
+      -
+        import: side_content
+      -
+        handle: related_movies
+        field:
+          mode: default
+          collections:
+            - movies
+          display: 'Related Movies'
+          type: entries
+          icon: entries
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: cover_image
+        field:
+          mode: grid
+          container: assets
+          folder: movies/covers
+          restrict: true
+          allow_uploads: true
+          max_files: 1
+          display: 'Cover Image'
+          type: assets
+          icon: assets
+          instructions: 'The movie''s cover image'
+          listable: hidden
+          validate:
+            - required
+            - image
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+      -
+        handle: genres
+        field:
+          type: terms
+          taxonomies:
+            - genres
+          display: Genres
+          mode: select
+          listable: hidden
+          max_items: 1

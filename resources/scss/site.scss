@@ -1,0 +1,32 @@
+// custom variables
+@import "abstracts/variables";
+
+// uikit core
+@import "vendor/uikit-defaults";
+
+// // custom mixins
+@import "abstracts/mixins/utility-mixin";
+@import "abstracts/mixins/button-mixin";
+@import "abstracts/mixins/navbar-mixin";
+@import "abstracts/mixins/nav-mixin";
+@import "abstracts/mixins/modal-mixin";
+@import "abstracts/mixins/slider-nav-mixin";
+@import "abstracts/mixins/form-mixin";
+@import "abstracts/mixins/heading-mixin";
+@import "abstracts/mixins/dotnav-mixin";
+@import "abstracts/mixins/section-mixin";
+@import "abstracts/mixins/tab-mixin";
+@import "abstracts/mixins/tile-mixin";
+@import "abstracts/mixins/icon-mixin";
+@import "abstracts/mixins/divider-mixin";
+@import "abstracts/mixins/pagination-mixin";
+
+
+// uikit
+@import "vendor/uikit";
+
+// utilities
+@import "abstracts/utilities";
+
+// custom components/styles
+// @import "components/footer";

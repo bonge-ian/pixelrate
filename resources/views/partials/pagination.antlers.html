@@ -1,0 +1,47 @@
+<ul class="uk-pagination uk-margin-remove-bottom uk-flex-center" uk-margin="">
+    {{ if prev_page }}
+             <li>
+                <a href="{{ prev_page }}" title="Previous">
+                    <span
+                        uk-pagination-previous=""
+                        class="uk-icon uk-pagination-previous"
+                    >
+                    </span>
+                </a>
+            </li>
+    {{ /if }}
+
+    {{ links:segments }}
+        {{ first }}
+            {{ if page == current_page }}
+                <li class="uk-active"><span>{{ page }}</span></li>
+            {{ else }}
+                <li><a href="{{ url }}">{{ page }}</a></li>
+            {{ /if }}
+        {{ /first }}
+        {{ if slider }}
+            <li class="uk-disabled"><span>...</span></li>
+        {{ /if }}
+
+        {{ last }}
+            {{ if page == current_page }}
+                <li class="uk-active"><span>{{ page }}</span></li>
+            {{ else }}
+                <li><a href="{{ url }}">{{ page }}</a></li>
+            {{ /if }}
+        {{ /last }}
+    {{ /links:segments }}
+
+    {{ if next_page }}
+        <li>
+            <a href="{{ next_page }}" title="Next">
+                <span
+                    uk-pagination-next=""
+                    class="uk-icon uk-pagination-next"
+                >
+                </span>
+            </a>
+        </li>
+
+     {{ /if }}
+</ul>

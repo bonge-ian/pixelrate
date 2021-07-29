@@ -1,0 +1,111 @@
+<section
+    class="uk-section-default uk-section uk-padding-remove-vertical"
+    uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;"
+>
+    <div class="uk-child-width-1-1 uk-grid uk-grid-margin" uk-grid>
+        <div>
+            <article
+                class="uk-margin uk-slideshow"
+                uk-scrollspy-class
+                uk-slideshow="ratio: false;animation: push;"
+            >
+                <div
+                    class="uk-position-relative uk-visible-toggle"
+                    tabindex="-1"
+                >
+                    <ul
+                        class="uk-slideshow-items"
+                        uk-height-viewport="offset-top: true;minHeight: 590; offset-bottom:20;"
+                    >
+                        {{ featured_shows }}
+                        <li tabindex="-1">
+                            <figure
+                                class="uk-position-cover"
+                                uk-slideshow-parallax="scale: 1.2,1.2,1"
+                            >
+                                {{ glide:hero_image width="2560" height="1680"
+                                }}
+                                <img
+                                    data-src="{{ url }}"
+                                    alt="{{ alt }}"
+                                    uk-img="target: !.uk-slideshow-items"
+                                    width="{{width}}"
+                                    height="{{height}}"
+                                />
+                                {{ /glide:hero_image }}
+                            </figure>
+                            <div
+                                class="uk-position-cover"
+                                uk-slideshow-parallax="opacity: 0,0,0.5; backgroundColor: #000,#000"
+                            ></div>
+                            <div
+                                class="uk-position-cover uk-flex uk-flex-bottom uk-flex-left uk-container uk-container-expand uk-section"
+                            >
+                                <div class="uk-panel uk-width-2xlarge uk-light">
+                                    <div
+                                        class="uk-h5 uk-margin-top uk-margin-remove-bottom"
+                                    >
+                                        <a
+                                            href="{{ genres:url ?? tv_show:url }}"
+                                            class=""
+                                        >
+                                            {{ genres:title ?? tv_show:title }}
+                                        </a>
+                                    </div>
+                                    <h1
+                                        class="uk-margin-small-top uk-margin-remove-bottom"
+                                    >
+                                        {{ if tv_show }}
+                                            {{ tv_show:title }} {{ seasons:title }} {{ episodes:title }} - {{ title }}
+                                        {{ else }}
+                                            {{ title }}
+                                        {{ /if }}
+                                    </h1>
+                                    <div class="uk-margin-medium-top">
+                                        <a
+                                            href="{{ url }}"
+                                            class="uk-button uk-button-primary"
+                                        >
+                                            Read Review
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {{ /featured_shows }}
+                    </ul>
+                    <div
+                        class="uk-hidden-hover uk-hidden-touch uk-visible@m uk-light"
+                    >
+                        <a
+                            class="uk-slidenav-large uk-position-center-left uk-icon uk-slidenav-previous uk-slidenav"
+                            href="#"
+                            uk-slidenav-previous=""
+                            uk-slideshow-item="previous"
+                        ></a>
+                        <a
+                            class="el-slidenav uk-slidenav-large uk-position-center-right uk-icon uk-slidenav-next uk-slidenav"
+                            href="#"
+                            uk-slidenav-next=""
+                            uk-slideshow-item="next"
+                        ></a>
+                    </div>
+                    <div
+                        class="uk-position-bottom-center uk-position-medium uk-light"
+                    >
+                        <ul class="uk-dotnav uk-flex-center" uk-margin="">
+                            {{ featured_shows }}
+                            <li
+                                uk-slideshow-item="{{ index }}"
+                                class="uk-first-column"
+                            >
+                                <a href="#">{{ title }}</a>
+                            </li>
+                            {{ /featured_shows }}
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+title: Actors
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Name
+          instructions: 'Actors First and Last name (e.g. John Doe)'
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: avatar
+        field:
+          mode: grid
+          container: assets
+          folder: actors
+          restrict: true
+          allow_uploads: true
+          max_files: 1
+          display: Avatar
+          type: assets
+          icon: assets
+          listable: hidden
+          validate:
+            - required
+            - image
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required

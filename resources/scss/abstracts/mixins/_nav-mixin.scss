@@ -1,0 +1,21 @@
+@mixin hook-nav-primary {
+    @include hook-base-heading();
+}
+
+@mixin hook-nav-primary-item {
+    color: $global-inverse-color;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    tranisition-property:color,background-color,border-color,box-shadow;
+    transition: .25s ease-in-out;
+    padding: 6px 0;
+}
+
+
+@mixin hook-nav-primary-item-hover {
+    color: $global-primary-background;
+}
+
+@mixin hook-nav-primary-item-active {
+    @include hook-nav-primary-item-hover();
+}

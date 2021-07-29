@@ -1,0 +1,28 @@
+<h3 uk-scrollspy-class>Websites</h3>
+<ul class="uk-list" uk-scrollspy-class>
+    {{ if official_website }}
+    <li>
+        <a href="{{ official_website }}" target="_blank" class="uk-link-text"
+            >Official Website</a
+        >
+    </li>
+    {{ /if }} {{ if facebook }}
+    <li>
+        <a href="{{ facebook }}" target="_blank" class="uk-link-text"
+            >Facebook</a
+        >
+    </li>
+    {{ /if }} {{ if twitter }}
+    <li>
+        <a href="{{ twitter }}" target="_blank" class="uk-link-text">Twitter</a>
+    </li>
+    {{ /if }} {{ if instagram }}
+    <li>
+        <a href="{{ instagram }}" target="_blank" class="uk-link-text">Instagram</a>
+    </li>
+    {{ /if}} {{ if youtube }}
+    <li>
+        <a href="{{ youtube }}" target="_blank" class="uk-link-text">Youtube</a>
+    </li>
+    {{ /if }}
+</ul>

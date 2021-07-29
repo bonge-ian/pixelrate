@@ -1,0 +1,28 @@
+.text-white {
+    color: $global-inverse-color;
+}
+
+// image placeholder
+img[data-src][src*="data:image"] {
+    background: scale-color($color: $global-secondary-background, $alpha: -75%);
+}
+
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
+    white-space: pre;
+}
+
+.uk-text-break {
+    word-wrap: break-word;
+}
+
+.main-content {
+    blockquote {
+        padding: 30px;
+    }
+
+    strong {
+        color: $global-emphasis-color;
+    }
+}

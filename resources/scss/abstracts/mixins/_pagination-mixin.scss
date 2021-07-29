@@ -1,0 +1,14 @@
+@mixin hook-pagination-item {
+    transition-property: color, background-color, border-color, box-shadow;
+    transition: 0.25s ease-in-out;
+    border-bottom: 1.5px solid transparent;
+}
+
+@mixin hook-pagination-item-hover {
+    color: $global-inverse-color;
+    border-bottom-color: $global-primary-background;
+}
+
+@mixin hook-pagination-item-active {
+    @include hook-pagination-item-hover();
+}

@@ -1,0 +1,13 @@
+title: Episodes
+template: episodes/show
+layout: layout
+taxonomies:
+  - seasons
+  - episodes
+revisions: false
+route: 'tv-show/{{ get_content :from="tv_show" }}{{ slug }}{{ /get_content }}/{{ seasons }}/{{ episodes }}/{{ slug }}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

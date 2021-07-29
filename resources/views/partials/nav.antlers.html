@@ -1,0 +1,106 @@
+<header
+    class="uk-background-default"
+    uk-sticky="sel-target: .uk-navbar; cls-active: uk-navbar-sticky"
+>
+    <div class="uk-container uk-container-xlarge">
+        <nav class="uk-navbar" uk-navbar="align: left; boundary: true">
+            <div class="uk-navbar-left">
+                <a href="/" class="uk-navbar-item uk-logo" tabindex="0">
+                    {{ if config:logo }}
+                    <img
+                        src="{{ config:logo }}"
+                        alt="{{ config:logo:alt }}"
+                        width="50"
+                        height="50"
+                    />
+                    {{ else }}
+                    <span
+                        class="uk-icon uk-preserve"
+                        uk-icon="icon: pixelrate;ratio: 1.5"
+                    ></span>
+                    {{ /if }}
+                </a>
+            </div>
+
+            <div class="uk-navbar-right">
+                <a
+                    href="#mobile-nav"
+                    class="uk-navbar-item uk-navbar-toggle uk-hidden@m"
+                    uk-toggle
+                >
+                    <span
+                        class="uk-icon uk-navbar-toggle-icon"
+                        uk-navbar-toggle-icon
+                    ></span>
+                </a>
+                <ul class="uk-navbar-nav uk-visible@m">
+                   {{ nav:collection:pages}}
+                        {{ if title == "Movies"}}
+                            <li class="uk-parent  {{ if is_current || is_parent }} uk-active {{ /if }}">
+                                <a href="{{ url }}" >{{ title }}</a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" >
+                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-1 uk-grid uk-grid-stack" uk-grid>
+                                        <div>
+                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                {{ taxonomy:genres  min_count="4"}}
+                                                    <li><a href="{{ url }}">{{title }}</a></li>
+                                                {{/taxonomy:genres }}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {{ else }}
+                            <li {{ if is_current || is_parent }} class="uk-active"{{ /if }}><a href="{{ url }}" >{{ title }}</a></li>
+                        {{ /if}}
+                   {{/nav:collection:pages}}
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="mobile-nav" class="uk-modal-full uk-modal" uk-modal>
+        <div
+            class="uk-modal-dialog uk-modal-body uk-height-viewport"
+            uk-height-viewport
+        >
+            <button class="uk-modal-close-full uk-icon uk-close" type="button" uk-close></button>
+            <div class="uk-child-width-1-1 uk-grid" uk-grid>
+                <div>
+                    <div class="uk-panel">
+                        <ul class="uk-nav uk-nav-primary">
+                            {{ nav:collection:pages}}
+
+                        {{ if title == "Movies"}}
+                            <li class="uk-parent  {{ if is_current || is_parent }} uk-active {{ /if }}">
+                                <a href="{{ url }}" >{{ title }}</a>
+                                <ul class="uk-nav-sub">
+                                        {{ taxonomy:genres  min_count="4"}}
+                                            <li><a href="{{ url }}">{{title }}</a></li>
+                                        {{/taxonomy:genres }}
+                                </ul>
+                            </li>
+                        {{ else }}
+                            <li {{ if is_current || is_parent }} class="uk-active"{{ /if }}><a href="{{ url }}" >{{ title }}</a></li>
+                        {{ /if}}
+                   {{/nav:collection:pages}}
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="uk-grid-margin">
+                    <div class="uk-panel">
+                        <ul class="uk-margin-top uk-grid uk-grid-small" uk-grid>
+                            <li><a href="#" class="uk-icon uk-icon-button" uk-icon="twitter"></a></li>
+                            <li><a href="#" class="uk-icon uk-icon-button" uk-icon="facebook"></a></li>
+                            <li><a href="#" class="uk-icon uk-icon-button" uk-icon="instagram"></a></li>
+                            <li><a href="#" class="uk-icon uk-icon-button" uk-icon="youtube"></a></li>
+                            <li><a href="#" class="uk-icon uk-icon-button" uk-icon="discord"></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

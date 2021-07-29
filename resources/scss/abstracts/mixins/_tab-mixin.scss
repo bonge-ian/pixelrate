@@ -1,0 +1,7 @@
+@mixin hook-tab-item-hover {
+    border-bottom: 1.5px solid $global-primary-background;
+}
+
+@mixin hook-tab-item-active {
+    @include hook-tab-item-hover();
+}

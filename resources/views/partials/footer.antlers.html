@@ -1,0 +1,172 @@
+<footer
+    id="footer"
+    class="uk-section-secondary uk-section uk-section-large uk-padding-remove-bottom"
+    uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-small; delay: false;"
+>
+    <div class="uk-container uk-container-xlarge">
+        <div class="uk-grid" uk-grid>
+            <div class="uk-width-1-2@m">
+                <div class="uk-panel">
+                    <h4 class="uk-text-bold" uk-scrollspy-class>Subscribe to our newsletter</h4>
+                    <div class="uk-width-large@s" uk-scrollspy-class>
+                        <form class="uk-panel">
+                            <div
+                                class="uk-child-width-expand@s uk-grid uk-margin-auto-right"
+                                uk-grid
+                            >
+                                <div class="uk-position-relative">
+                                    <button
+                                        type="submit"
+                                        class="uk-form-icon uk-form-icon-flip uk-text-primary"
+                                        uk-icon="icon: mail"
+                                    ></button>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        class="uk-input"
+                                        placeholder="Email Address"
+                                    />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-expand" uk-scrollspy-class>
+                <h5 class="uk-h4 uk-text-bold uk-text-capitalize">Movies</h5>
+                <ul class="uk-list">
+                    <li><a href="#">Drama</a></li>
+                    <li><a href="#">Comedy</a></li>
+                    <li><a href="#">Horror</a></li>
+                    <li><a href="#">Fantasy</a></li>
+                    <li><a href="#">Sci-fi</a></li>
+                </ul>
+            </div>
+            <div class="uk-width-expand" >
+                <h5 class="uk-h4 uk-text-bold uk-text-capitalize" uk-scrollspy-class>Tv Shows</h5>
+                <ul class="uk-list" uk-scrollspy-class>
+                    <li><a href="#">Drama</a></li>
+                    <li><a href="#">Comedy</a></li>
+                    <li><a href="#">Horror</a></li>
+                </ul>
+            </div>
+            <div class="uk-width-expand">
+                <h5 class="uk-h4 uk-text-bold uk-text-capitalize" uk-scrollspy-class>Pixelrate</h5>
+                <ul class="uk-list" uk-scrollspy-class>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Horror</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="uk-margin-remove-bottom uk-child-width-1-1 uk-margin-xlarge uk-grid uk-grid-stack"
+            uk-grid=""
+        >
+            <div class="uk-width-1-1@m uk-first-column">
+                <hr
+                    uk-scrollspy-class
+                    class="uk-scrollspy-inview uk-animation-slide-left-small"
+                />
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="uk-section-secondary uk-section uk-section-small" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-small; delay: false;">
+    <div class="uk-container uk-container-xlarge">
+        <div class="uk-grid" uk-grid>
+            <div class="uk-width-auto@m uk-flex-middle uk-grid-item-match">
+                <div class="uk-panel uk-width-1-1" uk-scrollspy-class>
+                    <div
+                        class="uk-child-width-expand uk-grid-row-small uk-flex-middle uk-grid"
+                        uk-grid
+                    >
+                        <div class="uk-width-auto@m">
+                            <a href="/" class="uk-logo">
+                                {{ if config:logo }}
+                                <img
+                                    src="{{ config:logo }}"
+                                    alt="{{ config:logo:alt }}"
+                                    width="50"
+                                    height="50"
+                                />
+                                {{ else }}
+                                <span
+                                    class="uk-icon uk-preserve"
+                                    uk-icon="icon: pixelrate;ratio: 1.5"
+                                ></span>
+                                {{ /if }}
+                            </a>
+                        </div>
+                        <div>
+                            <div class="uk-panel uk-text-meta">
+                                &copy;
+                                <script>
+                                    document.currentScript.insertAdjacentHTML(
+                                        "afterend",
+                                        '<time datetime="' +
+                                            new Date().toJSON() +
+                                            '">' +
+                                            new Intl.DateTimeFormat(
+                                                document.documentElement.lang,
+                                                { year: "numeric" }
+                                            ).format() +
+                                            "</time>"
+                                    );
+                                </script>
+                                <time
+                                    datetime="2021-03-22T17:03:05.500Z"
+                                ></time>
+                                Pixelrate. All rights reserved. Powered by
+                                <a href="https://bonge-inc.co.ke/"
+                                    >Bonge Inc.</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-expand@m uk-flex-middle uk-grid-item-match">
+                <div class="uk-panel uk-width-1-1">
+                    <div class="uk-margin-medium uk-text-right@m uk-text-left" uk-scrollspy-class="uk-animation-slide-right-small">
+                        <div
+                            class="uk-child-width-auto uk-grid-small uk-flex-right@m uk-flex-left uk-grid"
+                            uk-grid
+                        >
+                            <div>
+                                <a
+                                    href="#"
+                                    class="uk-icon uk-icon-button"
+                                    uk-icon="twitter"
+                                ></a>
+                            </div>
+                            <div>
+                                <a
+                                    href="#"
+                                    class="uk-icon uk-icon-button"
+                                    uk-icon="facebook"
+                                ></a>
+                            </div>
+                            <div>
+                                <a
+                                    href="#"
+                                    class="uk-icon uk-icon-button"
+                                    uk-icon="instagram"
+                                ></a>
+                            </div>
+                            <div>
+                                <a
+                                    href="#"
+                                    class="uk-icon uk-icon-button"
+                                    uk-icon="youtube"
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

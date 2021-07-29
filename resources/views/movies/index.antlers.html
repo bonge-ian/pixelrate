@@ -1,0 +1,79 @@
+{{ partial:featured }}
+{{ taxonomy:genres min_count="4"}}
+<section
+    class="uk-section uk-section-default"
+    uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-small; delay: false;"
+>
+    <div class="uk-container uk-container-expand">
+        <div class="uk-grid-column-small uk-grid-margin uk-grid" uk-grid>
+            <div class="uk-grid-item-match uk-flex-middle uk-width-auto">
+                <div class="uk-panel uk-width-1-1">
+                    <h2 class="uk-heading-bullet">
+                        <a href="{{ url }}" class="uk-link-reset">
+                            {{ title }}
+                        </a>
+                    </h2>
+                </div>
+            </div>
+            <div class="uk-grid-item-match uk-flex-middle uk-width-expand">
+                <div class="uk-panel uk-width-1-1">
+                    <div class="uk-margin uk-text-right">
+                        <a href="{{ url }}" class="uk-button uk-button-text"
+                            >See more</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article class="uk-child-width-1-1 uk-grid uk-grid-margin" uk-grid>
+            <div>
+                <div
+                    class="uk-margin uk-text-center uk-slider uk-slider-container"
+                    uk-slider
+                    uk-scrollspy-class
+                >
+                    <div class="uk-position-relative">
+                        <ul class="uk-slider-items uk-grid uk-grid-small">
+                            {{ entries limit="10"}}
+                            <li tabindex="-1">
+                                <figure>
+                                    <a
+                                        href="{{ url }}"
+                                        class="uk-cover-container uk-display-block uk-link-toggle"
+                                    >
+                                        {{ glide:cover_image width="300"
+                                        height="444"}}
+                                            <img
+                                                data-src="{{ url }}"
+                                                alt="{{ alt }}"
+                                                uk-img="target: !.uk-slider-items"
+                                                width="{{ width }}"
+                                                height="{{ height }}"
+                                            />
+                                        {{ /glide:cover_image}}
+                                    </a>
+                                </figure>
+                            </li>
+                            {{ /entries }}
+                        </ul>
+                        <div class="uk-visible@s uk-light">
+                            <a
+                                class="uk-slidenav-large uk-position-center-left uk-icon uk-slidenav-previous uk-slidenav"
+                                href="#"
+                                uk-slidenav-previous=""
+                                uk-slider-item="previous"
+                            ></a>
+                            <a
+                                class="uk-slidenav-large uk-position-center-right uk-icon uk-slidenav-next uk-slidenav"
+                                href="#"
+                                uk-slidenav-next=""
+                                uk-slider-item="next"
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+{{ /taxonomy:genres }}

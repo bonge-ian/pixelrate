@@ -1,0 +1,52 @@
+@mixin hook-navbar-nav-item {
+    text-transform: uppercase;
+    color: $global-inverse-color;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        bottom: 22px;
+        height: 3px;
+        background-color: transparent;
+        transition: 0.35s ease-in-out;
+        transition-property: background-color, border-color, box-shadow, height,
+            right;
+        left: 15px;
+        right: calc(102% - 15px);
+    }
+}
+
+@mixin hook-navbar-nav-item-hover {
+    color: $global-inverse-color;
+    &::before {
+        right: calc(15px);
+        background-color: $global-primary-background;
+    }
+}
+
+@mixin hook-navbar-nav-item-active {
+    @include hook-navbar-nav-item-hover();
+}
+
+@mixin hook-navbar-toggle {
+    color: $global-inverse-color;
+}
+
+@mixin hook-navbar-toggle-hover {
+    color: $global-primary-background;
+}
+
+@mixin hook-navbar-dropdown {
+    background: $global-secondary-background;
+}
+
+@mixin hook-navbar-dropdown-nav-item {
+    color: $global-inverse-color;
+}
+
+@mixin hook-navbar-dropdown-nav-item-hover {
+    color: $global-primary-background;
+}

@@ -1,0 +1,20 @@
+@mixin hook-slidenav {
+    padding: 20px 10px;
+    background-color: scale-color(
+        $color: $global-secondary-background,
+        $alpha: -80%
+    );
+    transition: color, background-color, border-color,
+        box-shadow 0.2s ease-in-out;
+}
+
+@mixin hook-slidenav-hover {
+    background-color: scale-color(
+        $color: $global-secondary-background,
+        $alpha: -75%
+    );
+}
+
+@mixin hook-slidenav-large {
+    padding: 40px 15px;
+}

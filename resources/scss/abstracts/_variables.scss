@@ -1,0 +1,22 @@
+$global-font-family: "Khula", sans-serif;
+$global-line-height: 1.6;
+
+$global-primary-background: #66fcf1;
+$global-secondary-background: #0b0c10;
+$global-muted-background: #45a29e;
+$global-success-background: #7ad03a;
+// $global-danger-background: #a00;
+$global-warning-background: #ffba00;
+$global-emphasis-color: #fefefe;
+$global-background: #1f2833;
+$global-color: #c5c6c7;
+$global-border: scale-color(
+    $color: $global-color,
+    $alpha: -60%,
+);
+$heading-line-border: $global-primary-background;
+$heading-divider-border: $global-primary-background;
+
+$nav-primary-sublist-item-color: $global-emphasis-color;
+$nav-primary-sublist-item-hover-color: $global-primary-background;
+$nav-primary-sublist-item-active-color: global-primary-background;

@@ -1,0 +1,7 @@
+@mixin hook-modal-dialog {
+    background-color: $global-background;
+}
+
+@mixin hook-modal-close {
+    color: $global-inverse-color;
+}

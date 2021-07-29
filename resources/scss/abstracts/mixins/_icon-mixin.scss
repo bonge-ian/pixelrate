@@ -1,0 +1,38 @@
+@mixin hook-icon-button {
+    transition: color, background-color, border-color, box-shadow,
+        0.3s ease-in-out;
+    border-radius: 0;
+    padding-bottom: calc(15px);
+    border-bottom: 2px solid $global-primary-background;
+    background: transparent;
+    color: $global-inverse-color;
+}
+
+@mixin hook-icon-button-hover {
+    color: $global-primary-background;
+    background: transparent;
+}
+
+@mixin hook-icon-button-active {
+    border-color: scale-color(
+        $color: $global-inverse-color,
+        $lightness: 0%,
+        $alpha: -30%
+    );
+    color: scale-color(
+        $color: $global-inverse-color,
+        $lightness: 0%,
+        $alpha: -30%
+    );
+    // background: $global-secondary-background;
+}
+
+@mixin hook-inverse-icon-button() {
+    @include hook-icon-button-hover();
+}
+@mixin hook-inverse-icon-button-hover() {
+    @include hook-icon-button-hover();
+}
+@mixin hook-inverse-icon-button-active() {
+    @include hook-icon-button-active();
+}

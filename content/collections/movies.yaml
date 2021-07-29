@@ -1,0 +1,12 @@
+title: Movies
+template: movies/show
+layout: layout
+taxonomies:
+  - genres
+revisions: false
+route: '/movies/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

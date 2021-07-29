@@ -1,0 +1,98 @@
+@mixin hook-button {
+    background: transparent;
+    transition: color, background-color, background-position, border-color,
+        box-shadow, 0.2s ease-in-out;
+    color: $global-inverse-color;
+    text-transform: capitalize;
+    background-origin: border-box;
+    border-radius: 3px;
+    border-width: 1.5px;
+    border-style: solid;
+}
+
+@mixin hook-button-default {
+    background-color: transparent;
+    border-color: scale-color($color: $global-emphasis-color, $alpha: -60%);
+}
+
+@mixin hook-button-default-hover {
+    background-color: $global-emphasis-color;
+    color: $global-background;
+}
+
+@mixin hook-button-default-active {
+    color: $global-background;
+    background-color: darken($global-emphasis-color, 5%);
+}
+
+@mixin hook-button-primary {
+    background-color: transparent;
+    border-color: $global-primary-background;
+}
+
+@mixin hook-button-primary-hover {
+    border-color: transparent;
+    backgroud-color: $global-primary-background;
+}
+
+@mixin hook-button-primary-active {
+    border-color: transparent;
+    backgroud-color: darken($global-primary-background, 5%);
+}
+
+@mixin hook-button-secondary {
+    background-color: transparent;
+    border-color: $global-secondary-background;
+}
+
+@mixin hook-button-secondary-hover {
+    border-color: transparent;
+    backgroud-color: $global-secondary-background;
+}
+
+@mixin hook-button-text {
+    border: none;
+    color: $global-inverse-color;
+    position: relative;
+    padding-right: 25px;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 20px;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAyMCAxMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICA8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjZmY2YxIiBzdHJva2Utd2lkdGg9IjEuNSIgcG9pbnRzPSIxMyAxIDE4IDUuNSAxMyAxMCAiPjwvcG9seWxpbmU+DQogICAgPGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjZmY2YxIiBzdHJva2Utd2lkdGg9IjEuNSIgeDE9IjAiIHkxPSI1LjUiIHgyPSIxOC40IiB5Mj0iNS41Ij48L2xpbmU+DQo8L3N2Zz4=");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 5px) 50%;
+        transition: background-position 0.28s ease-out;
+    }
+}
+
+@mixin hook-button-text-hover {
+    color: $global-inverse-color;
+    &::before {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAyMCAxMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICA8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjZmY2YxIiBzdHJva2Utd2lkdGg9IjEuNSIgcG9pbnRzPSIxMyAxIDE4IDUuNSAxMyAxMCAiPjwvcG9seWxpbmU+DQogICAgPGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjZmY2YxIiBzdHJva2Utd2lkdGg9IjEuNSIgeDE9IjAiIHkxPSI1LjUiIHgyPSIxOC40IiB5Mj0iNS41Ij48L2xpbmU+DQo8L3N2Zz4=");
+        background-position: 100% 50%;
+    }
+}
+
+// inverse
+@mixin hook-inverse-button-primary() {
+    @include hook-button-primary();
+}
+@mixin hook-inverse-button-primary-hover() {
+    @include hook-button-primary-hover;
+}
+@mixin hook-inverse-button-primary-active() {
+    @include hook-button-primary-active;
+}
+@mixin hook-inverse-button-secondary() {
+    @include hook-button-secondary;
+}
+@mixin hook-inverse-button-secondary-hover() {
+    @include hook-button-secondary-hover;
+}
+@mixin hook-inverse-button-secondary-active() {
+    @include hook-button-secondary-active;
+}

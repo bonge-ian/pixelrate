@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href="{{ site_config:logo }}" type="image/x-icon" />
+        <title>{{ title }} | {{ site_config:title ?? site:name }}</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Khula:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="{{ mix src='css/site.css' }}" />
+    </head>
+    <body class="uk-background-default uk-padding-small@s uk-padding-remove-vertical">
+        {{ partial:nav }}
+
+        <main>
+            {{ template_content }}
+        </main>
+
+        {{ partial:footer}}
+        <script src="{{ mix src='/js/site.js' }}"></script>
+    </body>
+</html>

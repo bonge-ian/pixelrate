@@ -1,0 +1,82 @@
+title: 'TV Shows'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: overview
+        field:
+          antlers: false
+          display: Overview
+          type: textarea
+          icon: textarea
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: hero_image
+        field:
+          mode: grid
+          container: assets
+          folder: tvshows/hero-images
+          restrict: true
+          allow_uploads: true
+          max_files: 1
+          display: 'Hero Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          validate:
+            - required
+            - image
+      -
+        import: side_content
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: cover_image
+        field:
+          mode: grid
+          container: assets
+          folder: tvshows/covers
+          restrict: true
+          allow_uploads: true
+          max_files: 1
+          display: 'Cover Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          validate:
+            - required
+            - image
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+      -
+        handle: seasons
+        field:
+          type: terms
+          taxonomies:
+            - seasons
+          display: Seasons
+          mode: select

@@ -1,0 +1,42 @@
+@mixin hook-base-link {
+    color: $global-primary-background;
+    text-decoration: none;
+}
+
+@mixin hook-base-link-hover {
+    color: $global-inverse-color;
+    text-decoration: none;
+}
+@mixin hook-inverse {
+    @include hook-base-link;
+    @include hook-base-link-hover;
+}
+
+@mixin hook-base-heading {
+    font-weight: 700;
+}
+
+@mixin hook-base-blockquote {
+    font-size: 1.75rem;
+    color: $global-emphasis-color;
+    font-style: normal;
+    @include hook-base-heading();
+}
+
+@mixin hook-base-blockquote-footer {
+    font-size: 1.25rem;
+    margin-top: 40px;
+    line-height: 1.35;
+
+    &::before {
+        content: "-";
+    }
+}
+
+@mixin hook-padding-misc {
+    @media (min-width: $breakpoint-small) {
+        .uk-padding-small\@s {
+            padding: 15px;
+        }
+    }
+}
